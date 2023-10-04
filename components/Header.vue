@@ -1,6 +1,6 @@
 <template>
-  <header class="p-5 shadow-xl text-white">
-    <div class="container mx-auto flex items-center justify-between">
+  <header class="shadow-xl text-white sticky top-0 bg-inherit z-10">
+    <div class="container mx-auto p-5 flex items-center justify-between">
       <NuxtLink to="/">
         <Logo class="h-14" />
       </NuxtLink>

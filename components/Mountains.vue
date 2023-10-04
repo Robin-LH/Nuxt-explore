@@ -1,27 +1,18 @@
 <script setup>
 const { data } = await useFetch(`https://api.nuxtjs.dev/mountains`);
-console.log(data);
 </script>
 
 <template>
-  <section class="bg-white py-10">
-    <div class="container mx-auto space-y-5">
-      <h2 class="text-4xl font-medium text-dark">Mountains ({{ data.length }})</h2>
+  <section class="py-10">
+    <div class="container mx-auto space-y-5 px-5">
+      <div class="space-y-3">
+        <h2 class="text-4xl font-medium text-white">Mountains ({{ data.length }})</h2>
+        <hr />
+      </div>
 
-      <div class="grid grid-cols-3 gap-5">
-        <div
-          v-for="mountain in data"
-          class="hover:shadow-lg shadow transition-all group rounded-md overflow-hidden"
-        >
-          <img
-            :src="mountain.image"
-            alt=""
-            class="max-h-52 w-full object-cover group-hover:scale-110 transition-all"
-          />
-          <div class="p-5">
-            <h3 class="text-xl font-medium text-primary tracking-wider">{{ mountain.title }}</h3>
-            <p class="line-clamp-3">{{ mountain.description }}</p>
-          </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div v-for="mountain in data">
+          <MountainCard :mountain="mountain" />
         </div>
       </div>
     </div>

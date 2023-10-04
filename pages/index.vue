@@ -2,8 +2,13 @@
   <span>
     <PageHead />
     <ExtraContent />
-    <Mountains />
     <ExtraContent />
     <ExtraContent />
   </span>
 </template>
+
+<script setup>
+useSeoMeta({
+  title: "My First Nuxt App - Home",
+});
+</script>
